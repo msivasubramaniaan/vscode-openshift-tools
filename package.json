@@ -240,7 +240,7 @@
     "onCommand:openshift.app.create",
     "onCommand:openshift.app.delete",
     "onCommand:openshift.component.create",
-    "onCommand:openshift.component.open.devfileRegistry",
+    "onCommand:openshift.componentTypesView.registry.openInView",
     "onCommand:openshift.component.createFromLocal",
     "onCommand:openshift.component.createFromRootWorkspaceFolder",
     "onCommand:openshift.component.describe",
@@ -861,12 +861,17 @@
       {
         "command": "openshift.componentTypesView.registry.remove",
         "title": "Remove",
-        "category": "OpenSift"
+        "category": "OpenShift"
       },
       {
         "command": "openshift.componentTypesView.registry.openInBrowser",
         "title": "Open in Browser",
-        "category": "OpenSift"
+        "category": "OpenShift"
+      },
+      {
+        "command": "openshift.componentTypesView.registry.openInView",
+        "title": "Open in View",
+        "category": "OpenShift"
       },
       {
         "command": "openshift.welcome",
@@ -942,8 +947,8 @@
       },
       {
         "view": "openshiftComponentTypesView",
-        "contents": "Default Devfile Regisitries are Here.\n[Open Default Devfile Registry](command:openshift.component.open.devfileRegistry)",
-        "enablement": "openshift.component.explorer.init"
+        "contents": "Add new Devfile Registry to start creating Components.\n[Add Devfile Registry](command:openshift.componentTypesView.registry.add)",
+        "enablement": "openshift.componentTypesView.init"
       }
     ],
     "menus": {
@@ -1156,6 +1161,10 @@
         },
         {
           "command": "openshift.componentTypesView.registry.openInBrowser",
+          "when": "false"
+        },
+        {
+          "command": "openshift.componentTypesView.registry.openInView",
           "when": "false"
         }
       ],
@@ -1538,6 +1547,11 @@
         },
         {
           "command": "openshift.componentTypesView.registry.openInBrowser",
+          "when": "view == openshiftComponentTypesView && viewItem == devfileRegistry",
+          "group": "0@0"
+        },
+        {
+          "command": "openshift.componentTypesView.registry.openInView",
           "when": "view == openshiftComponentTypesView && viewItem == devfileRegistry",
           "group": "0@0"
         },

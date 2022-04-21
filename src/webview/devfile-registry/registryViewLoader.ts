@@ -11,6 +11,7 @@ import { Command } from '../../odo/command';
 import { Data } from '../../odo/componentTypeDescription';
 import { stringify } from 'yaml';
 import { ComponentTypeAdapter, DevfileComponentType } from '../../odo/componentType';
+import { vsCommand } from '../../vscommand';
 
 let panel: vscode.WebviewPanel;
 let devFiles: Data[] = [];
@@ -125,6 +126,11 @@ export default class RegistryViewLoader {
             .replace('devFileRegistryViewer.js', `${reactAppUri}`)
             .replace('%BASE_URL%', `${reactAppUri}`)
             .replace('<!-- meta http-equiv="Content-Security-Policy" -->', meta);
+    }
+
+    @vsCommand('openshift.componentTypesView.registry.openInView')
+    static async openRegistryView(): Promise<void> {
+      await RegistryViewLoader.loadView('Devfile Registry');
     }
 }
 
