@@ -33,7 +33,7 @@ jobs:
               run: |
                   git config --global user.email "openshifttools-bot@users.noreply.github.com"
                   git config --global user.name "openshifttools-bot"
-                  git checkout -b "crc-${{ env.LATEST_TOOL_RELEASE }}"
+                  git checkout -b "crc-${{ env.LATEST_TOOL_RELEASE }}" redhat-developer/vscode-openshift-tools
                   git commit -am "Update crc to ${{ env.LATEST_TOOL_RELEASE }}"
                   git push origin "crc-${{ env.LATEST_TOOL_RELEASE }}"
                   gh pr create --title "Update crc to ${{ env.LATEST_TOOL_RELEASE }}" --body "See ${{ env.LATEST_TOOL_URL }}"
