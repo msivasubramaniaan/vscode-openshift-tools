@@ -10,9 +10,9 @@ jobs:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         steps:
             - name: Check Out Code
-              uses: msivasubramaniaan/vscode-openshift-tools@v0.3.0
-              with:
-                repo-token: ${{ secrets.GITHUB_TOKEN }}
+              uses: action/checkout@v3
+              env:
+                GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
             - name: Get latest CRC version
               run: |
                   echo "REPO_CRC_VERSION=$(cat src/tools.json | jq -r .crc.crcVersion)" >> $GITHUB_ENV
