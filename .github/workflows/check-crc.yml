@@ -10,7 +10,7 @@ jobs:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         steps:
             - name: Check Out Code
-              uses: actions/checkout@v2
+              uses: msivasubramaniaan/vscode-openshift-tools@v2
               with:
                 repo-token: ${{ secrets.GITHUB_TOKEN }}
             - name: Get latest CRC version
