@@ -11,6 +11,8 @@ jobs:
         steps:
             - name: Check Out Code
               uses: actions/checkout@v2
+              with:
+                repo-token: ${{ secrets.GITHUB_TOKEN }}
             - name: Get latest CRC version
               run: |
                   echo "REPO_CRC_VERSION=$(cat src/tools.json | jq -r .crc.crcVersion)" >> $GITHUB_ENV
@@ -31,7 +33,7 @@ jobs:
               run: |
                   git config --global user.email "openshifttools-bot@users.noreply.github.com"
                   git config --global user.name "openshifttools-bot"
-                  git checkout -b "crc-${{ env.LATEST_TOOL_RELEASE }}" redhat-developer/vscode-openshift-tools
+                  git checkout -b "crc-${{ env.LATEST_TOOL_RELEASE }}"
                   git commit -am "Update crc to ${{ env.LATEST_TOOL_RELEASE }}"
                   git push origin "crc-${{ env.LATEST_TOOL_RELEASE }}"
                   gh pr create --title "Update crc to ${{ env.LATEST_TOOL_RELEASE }}" --body "See ${{ env.LATEST_TOOL_URL }}"
