@@ -1,6 +1,8 @@
 name: check-crc
 
-on: [workflow_dispatch]
+on:
+    schedule:
+        - cron: "0 8 * * *"
 
 jobs:
     check-crc-repo:
@@ -10,9 +12,7 @@ jobs:
             GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         steps:
             - name: Check Out Code
-              uses: actions/checkout@v3
-              env:
-                GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+              uses: actions/checkout@v2
             - name: Get latest CRC version
               run: |
                   echo "REPO_CRC_VERSION=$(cat src/tools.json | jq -r .crc.crcVersion)" >> $GITHUB_ENV
@@ -37,3 +37,4 @@ jobs:
                   git commit -am "Update crc to ${{ env.LATEST_TOOL_RELEASE }}"
                   git push origin "crc-${{ env.LATEST_TOOL_RELEASE }}"
                   gh pr create --title "Update crc to ${{ env.LATEST_TOOL_RELEASE }}" --body "See ${{ env.LATEST_TOOL_URL }}"
+                  gh pr create --reviewer msivasub
