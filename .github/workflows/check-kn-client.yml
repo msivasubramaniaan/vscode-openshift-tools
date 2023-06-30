@@ -25,7 +25,7 @@ jobs:
         run: |
           jq --indent 4 '.kn.version = "${{ env.LATEST_TOOL_RELEASE }}"' src/tools.json | jq --indent 4 '.kn.versionRange = "^${{ env.LATEST_TOOL_RELEASE }}"' | jq --indent 4 '.kn.versionRangeLabel = "version >= ${{ env.LATEST_TOOL_RELEASE }}"' > src/tools.json.new
           mv src/tools.json.new src/tools.json
-          for platform in win32 darwin linux; do
+          for platform in win32 darwin darwin-arm64 linux; do
             old_url=`jq -r .kn.platform.${platform}.url src/tools.json`
             new_url=`echo ${old_url} | sed "s|${{ env.REPO_KN_CLIENT_VERSION }}|${{ env.LATEST_TOOL_RELEASE }}|"`
             checksum=`curl -s ${new_url}.sha256`
