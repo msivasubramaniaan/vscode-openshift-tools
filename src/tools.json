@@ -59,6 +59,40 @@
             }
         }
     },
+    "kn": {
+        "description": "Knative CLI tool",
+        "vendor": "Red Hat, Inc.",
+        "name": "kn",
+        "version": "1.9.2",
+        "versionRange": "1.9.2",
+        "versionRangeLabel": "v1.9.2",
+        "dlFileName": "kn",
+        "cmdFileName": "kn",
+        "filePrefix": "",
+        "platform": {
+            "win32": {
+                "url": "https://github.com/knative/client/releases/download/knative-v1.9.2/kn-windows-amd64.exe",
+                "sha256sum": "0f4d734ffa48a980ec4c27e6b3b282b8e1c46ebf6be1b3bf40696fd3965d17b9",
+                "dlFileName": "kn-windows-amd64.exe",
+                "cmdFileName": "kn.exe"
+            },
+            "darwin": {
+                "url": "https://github.com/knative/client/releases/download/knative-v1.9.2/kn-darwin-amd64",
+                "sha256sum": "3b2eafef92177497162efea094b46fa1ff3d1b9d3dd86e04f5fc603485a51093",
+                "dlFileName": "kn-darwin-amd64"
+            },
+            "darwin-arm64": {
+                "url": "https://github.com/knative/client/releases/download/knative-v1.9.2/kn-darwin-arm64",
+                "sha256sum": "6eef487521d3b448faa0f4396f831c06dd6b1133b5c1b40229d56d759209ca4c",
+                "dlFileName": "kn-darwin-arm64"
+            },
+            "linux": {
+                "url": "https://github.com/knative/client/releases/download/knative-v1.9.2/kn-linux-amd64",
+                "sha256sum": "8ec9e7384f89ffce0b2a2f6b641b9e07293583b7b8d34b541f08dc4e41d29378",
+                "dlFileName": "kn-linux-amd64"
+            }
+        }
+    },
     "helm": {
         "description": "oc helm CLI",
         "vendor": "Red Hat, Inc.",
