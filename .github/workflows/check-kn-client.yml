@@ -3,7 +3,7 @@ name: check-kn-client
 on: [workflow_dispatch]
 
 jobs:
-  check-odo-repo:
+  check-kn-cient-repo:
     runs-on: ubuntu-latest
     env:
         TOOL_REPO: knative/client
@@ -37,7 +37,7 @@ jobs:
         run: |
           git config --global user.email "openshifttools-bot@users.noreply.github.com"
           git config --global user.name "openshifttools-bot"
-          git checkout -b "odo-${{ env.LATEST_TOOL_RELEASE }}"
-          git commit -am "Update odo to ${{ env.LATEST_TOOL_RELEASE }}"
-          git push origin "odo-${{ env.LATEST_TOOL_RELEASE }}"
-          gh pr create --title "Update odo to ${{ env.LATEST_TOOL_RELEASE }}" --body "See ${{ env.LATEST_TOOL_URL }}"
+          git checkout -b "kn-client-${{ env.LATEST_TOOL_RELEASE }}"
+          git commit -am "Update kn client to ${{ env.LATEST_TOOL_RELEASE }}"
+          git push origin "kn-client-${{ env.LATEST_TOOL_RELEASE }}"
+          gh pr create --title "Update kn client to ${{ env.LATEST_TOOL_RELEASE }}" --body "See ${{ env.LATEST_TOOL_URL }}"
