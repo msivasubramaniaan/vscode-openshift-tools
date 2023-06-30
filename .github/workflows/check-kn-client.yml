@@ -3,7 +3,7 @@ name: check-kn-client
 on: [workflow_dispatch]
 
 jobs:
-  check-kn-cient-repo:
+  check-kn-client-repo:
     runs-on: ubuntu-latest
     env:
         TOOL_REPO: knative/client
@@ -15,7 +15,7 @@ jobs:
         run: |
           echo "REPO_KN_CLIENT_VERSION=$(cat src/tools.json | jq -r .kn.version)" >> $GITHUB_ENV
           LATEST_TOOL_RELEASE_RESP=$(gh release --repo ${{ env.TOOL_REPO }} view --json tagName,url)
-          echo "LATEST_TOOL_RELEASE=$(echo ${LATEST_TOOL_RELEASE_RESP} | jq -r .tagName | sed 's|v||')" >> $GITHUB_ENV
+          echo "LATEST_TOOL_RELEASE=$(echo ${LATEST_TOOL_RELEASE_RESP} | jq -r .tagName | sed 's|knative-v||')" >> $GITHUB_ENV
           echo "LATEST_TOOL_URL=$(echo ${LATEST_TOOL_RELEASE_RESP} | jq -r .url)" >> $GITHUB_ENV
       - name: Find existing PR for knatve client version
         run: |
