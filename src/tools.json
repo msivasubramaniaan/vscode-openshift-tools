@@ -87,40 +87,40 @@
         "description": "Function CLI tool",
         "vendor": "Red Hat, Inc.",
         "name": "func",
-        "version": "1.19.1",
-        "versionRange": "^1.19.1",
-        "versionRangeLabel": "version >= 1.19.1",
+        "version": "1.19.5",
+        "versionRange": "^1.19.5",
+        "versionRangeLabel": "version >= 1.19.5",
         "dlFileName": "func",
         "cmdFileName": "func",
         "filePrefix": "",
         "platform": {
             "win32": {
-                "url": "https://github.com/knative/func/releases/download/knative-v1.19.1/func_windows_amd64.exe",
-                "sha256sum": "5356758d3b3cbd1377b694936df633872151922d5a5709083b7e15d90ea2adf7",
+                "url": "https://github.com/knative/func/releases/download/knative-v1.19.5/func_windows_amd64.exe",
+                "sha256sum": "4a529033835d4cc7bf1e1c7fe87b1a8ccbb6f3b4c4c31738a4ef1da4c158ddff",
                 "dlFileName": "func_windows_amd64.exe",
                 "cmdFileName": "func.exe"
             },
             "darwin": {
-                "url": "https://github.com/knative/func/releases/download/knative-v1.19.1/func_darwin_amd64",
-                "sha256sum": "25f917bda42f0ad64d2cf5ae3c49ce33dec67717737282c68d5a0f64ea9e6995",
+                "url": "https://github.com/knative/func/releases/download/knative-v1.19.5/func_darwin_amd64",
+                "sha256sum": "5d51bcaec00e5b3de85d69d3af61ab8cc8409b5eb2086d22c925fce7768f8258",
                 "dlFileName": "func_darwin_amd64",
                 "cmdFileName": "func"
             },
             "darwin-arm64": {
-                "url": "https://github.com/knative/func/releases/download/knative-v1.19.1/func_darwin_arm64",
-                "sha256sum": "71163c57561fd19cf7f649e40fc8be57ff5895700415f128a9af9edccf51c3a0",
+                "url": "https://github.com/knative/func/releases/download/knative-v1.19.5/func_darwin_arm64",
+                "sha256sum": "e164adbcfc5ef7248620044fc6e48853281c1769ccf2ba22e08102bbf288e8fa",
                 "dlFileName": "func_darwin_arm64",
                 "cmdFileName": "func"
             },
             "linux": {
-                "url": "https://github.com/knative/func/releases/download/knative-v1.19.1/func_linux_amd64",
-                "sha256sum": "a26daa24b0687d33efdf9702e1a17dee83d08894f0f8e36525b6a90d0543c7fa",
+                "url": "https://github.com/knative/func/releases/download/knative-v1.19.5/func_linux_amd64",
+                "sha256sum": "599b5a1ad13a2c54209b2116e49fc39a44c6485fadfd41344797ea97838b32f9",
                 "dlFileName": "func_linux_amd64",
                 "cmdFileName": "func"
             },
             "linux-arm64": {
-                "url": "https://github.com/knative/func/releases/download/knative-v1.19.1/func_linux_arm64",
-                "sha256sum": "3535f8a922a24738662fa03e5daeb20029723dbc0d97a57f45451f532afe01d6",
+                "url": "https://github.com/knative/func/releases/download/knative-v1.19.5/func_linux_arm64",
+                "sha256sum": "05f152a2034851644e267e962362f4bf1dd623fac64e9bfb7a82cf5ffe46b0cd",
                 "dlFileName": "func_linux_arm64",
                 "cmdFileName": "func"
             }
